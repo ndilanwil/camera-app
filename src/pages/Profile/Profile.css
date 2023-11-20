@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+}
+
+.profile {
+    width: 100%;
+}
+
+.left{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 60%;
+    gap: 10px;
+}
+.left div{
+    display: flex;
+    flex-direction: column;
+    
+}
+.left div input{
+    height: 40px;
+    border-radius: 10px;
+}
+.left div{
+    grid-column: span 2 ;
+}
+
+#company{
+    grid-column: span 3;
+}
+#lname{
+    grid-column: span 3;
+}
+#fname{
+    grid-column: span 3;
+}
+#email{
+    grid-column: span 3;
+}
+#address{
+    grid-column: span 6;
+}
