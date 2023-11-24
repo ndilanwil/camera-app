@@ -9,7 +9,7 @@ function connectClient() {
         const t = Math.random().toString(36).substring(7)
         const clientIdd = "client".concat(t)
     
-        const hostURL = "ws://test.mosquitto.org:8081"
+        const hostURL = "mqtt://test.mosquitto.org:8081"
     
         const options = {
             clientId: clientIdd,
@@ -30,14 +30,15 @@ function connectClient() {
         })
     
         mqttClient.on("connect", () => {
-            // console.log("Client connected: " + clientId);
+            console.log("Client connected: " + clientId);
         })
     
         mqttClient.on("message", (topic, message, packet) => {
             const test = JSON.parse(message)
-            localStorage.setItem("message", test)
-            // console.log("I'm messsage " + localStorage.getItem("message"))
-            // console.log("Received message: " + message.toString() + "\nOn topic: " + topic);
+            console.log(test.count)
+            localStorage.setItem("message", test.count)
+            console.log("I'm messsage " + localStorage.getItem("message"))
+            console.log("Received message: " + message.toString() + "\nOn topic: " + topic);
         })
     }
     

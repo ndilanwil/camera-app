@@ -28,7 +28,7 @@ export default function AppView() {
   }, []);
 
   useEffect(() => { 
-    setMessage(localStorage.getItem('message'))
+    setMessage(parseInt(localStorage.getItem('message')))
     function changeVariable() {
       setRefresh(!refresh);
     }
@@ -54,7 +54,7 @@ export default function AppView() {
         <Grid xs={12} sm={6} md={3}>
           <AppWidgetSummary
             title="Counts"
-            total={12}
+            total={message}
             color="success"
             icon={<img alt="icon" src="/assets/icons/glass/ic_glass_message.png" />}
           />
